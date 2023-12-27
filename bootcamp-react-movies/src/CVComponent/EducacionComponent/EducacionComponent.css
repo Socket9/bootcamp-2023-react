@@ -1,0 +1,24 @@
+.education-container{
+	margin-bottom: 3rem;
+
+	& .education-list {
+		padding-left: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: .8rem;
+		
+		& .education-item h3 {
+			font-size: 1.2rem;
+		}
+
+		& .education-item p {
+			font-style: italic;
+			font-size: 1rem;
+
+			.item-year{
+				font-size: .9rem;
+				color: #747474;
+			}
+		}
+	}
+}

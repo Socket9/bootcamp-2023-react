@@ -1,0 +1,26 @@
+.languages-container{
+
+	& .title{
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		line-height: 1;
+	}
+
+	& .languages-list {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		margin-bottom: 1.2rem;
+
+		& .language-item .language {
+			font-size: 1rem;
+			font-weight: bold;
+			font-style: italic;
+			text-transform: capitalize;
+		}
+
+		& .language-item .level {
+			text-transform: capitalize;
+		}
+	}
+}
