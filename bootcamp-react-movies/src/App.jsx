@@ -1,10 +1,10 @@
 import "./App.css";
-import CVComponent from "./CVComponent/CVComponent";
+import FechaValida from "./FechaValida/FechaValida";
 
 function App() {
     return (
         <>
-            <CVComponent/>
+            <FechaValida />
         </>
     );
 }
