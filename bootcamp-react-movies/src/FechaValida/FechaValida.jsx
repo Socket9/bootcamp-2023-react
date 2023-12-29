@@ -21,10 +21,8 @@ const FechaValida = () => {
         setIsValidDate(isValid);
 
         if (isValid) {
-            // Si la fecha es válida, limpiamos el valor del input
             inputRef.current.value = "";
         } else {
-            // Si la fecha no es válida, enfocamos en el input
             inputRef.current.focus();
         }
     };
