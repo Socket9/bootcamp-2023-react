@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import ValidationMessage from "./ValidationMessage";
 import "./styles.css";
 
@@ -6,6 +6,7 @@ const FechaValida = () => {
     const [date, setDate] = useState("");
     const [showMsg, setShowMsg] = useState(false);
     const [isValidDate, setIsValidDate] = useState(false);
+    const inputRef = useRef(null);
 
     const handleChange = (e) => {
         setDate(e.target.value);
@@ -18,6 +19,14 @@ const FechaValida = () => {
         const isValid = checkValidDate(inputDate);
         setShowMsg(true);
         setIsValidDate(isValid);
+
+        if (isValid) {
+            // Si la fecha es válida, limpiamos el valor del input
+            inputRef.current.value = "";
+        } else {
+            // Si la fecha no es válida, enfocamos en el input
+            inputRef.current.focus();
+        }
     };
 
     const checkValidDate = (inputDate) => {
@@ -66,6 +75,7 @@ const FechaValida = () => {
                         maxLength={10}
                         onChange={handleChange}
                         value={date}
+                        ref={inputRef}
                     />
                     <button>Validar</button>
                 </form>
