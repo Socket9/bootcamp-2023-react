@@ -42,6 +42,7 @@ const FechaValida = () => {
 
         if (
             year <= maxYear &&
+            year >= 1800 &&
             month > 0 &&
             month <= 12 &&
             day > 0 &&
