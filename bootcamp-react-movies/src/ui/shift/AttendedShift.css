@@ -1,0 +1,31 @@
+.attended-shift-container {
+    width: 30%;
+    height: 25rem;
+    background-color: #e6e6e6;
+    color: #242424;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+
+    & .no-shift-selected-msg {
+        color: #9b2a2a;
+    }
+    & ul span{
+	font-weight: bold;
+    }
+    & ul li {
+        list-style: none;
+    }
+    & button {
+        border-radius: 0.5rem;
+        border: none;
+        padding: 0.5rem;
+        background-color: #8eb8c5;
+        color: #242424;
+        font-weight: bold;
+        font-size: 1rem;
+    }
+}
+

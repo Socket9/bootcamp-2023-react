@@ -1,0 +1,26 @@
+.nav-container{
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	padding: 1rem 2rem;
+	gap: .5rem;
+	width: 80%;
+	height: 4rem;
+	background-color: #e6e6e6;
+	border-radius: .5rem;
+	margin: 1rem auto;
+	& .nav-link{
+		font-size: 1.1rem;
+		text-decoration: none;
+		font-weight: bold;
+		color:#242424;
+		padding: .3rem 1.5rem;
+		border-bottom: 2px solid transparent;
+	}
+
+	& .active{
+		border-bottom: 2px solid #8eb8c5;
+	}
+}
+
+  
