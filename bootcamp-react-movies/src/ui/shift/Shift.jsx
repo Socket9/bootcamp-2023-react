@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useDispatch } from "react-redux";
 import "./Shift.css";
 import { setSelectedShiftId } from "../../architecture/redux/states/shifts/shift.state";
@@ -28,13 +29,13 @@ const Shift = ({ shift }) => {
                     <p>Razón</p>
                     <span>{shift.reason}</span>
                 </div>
-                {shift.type === "oficial" && (
+                {shift.type === "Oficial" && (
                     <div className="item">
                         <p>Nombre del oficial</p>
                         <span>{shift.officerFullName}</span>
                     </div>
                 )}
-                {shift.type === "online" && (
+                {shift.type === "Online" && (
                     <>
                         <div className="item">
                             <p>Programada</p>

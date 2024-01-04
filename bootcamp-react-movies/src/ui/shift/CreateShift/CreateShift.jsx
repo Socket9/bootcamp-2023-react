@@ -1,12 +1,15 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addShift } from "../../../architecture/redux/states/shifts/shift.state";
 import Dropdown from "./Dropdown";
 import "./CreateShift.css";
+
 const CreateShift = () => {
     const types = ["Caja", "Online", "Oficial"];
     const dispatch = useDispatch();
+    const shifts = useSelector((store) => store.shifts.shifts);
     const [shiftData, setShiftData] = useState({
+        id: "",
         date: "",
         type: "",
         reason: "",
@@ -35,7 +38,8 @@ const CreateShift = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(addShift(shiftData));
+        const shiftWithId = { ...shiftData, id: shifts.length };
+        dispatch(addShift(shiftWithId));
     };
 
     const renderDynamicInputs = () => {
@@ -49,15 +53,7 @@ const CreateShift = () => {
                             value={shiftData.scheduledDate}
                             onChange={handleChange}
                             placeholder="Fecha Programada"
-                        />
-                    </div>
-                    <div className="item">
-                        <input
-                            type="datetime-local"
-                            name="finishDate"
-                            value={shiftData.finishDate}
-                            onChange={handleChange}
-                            placeholder="Fecha Finalización"
+                            required
                         />
                     </div>
                 </>
@@ -71,6 +67,8 @@ const CreateShift = () => {
                         value={shiftData.officerFullName}
                         onChange={handleChange}
                         placeholder="Nombre del Oficial: "
+                        required
+                        autoComplete="off"
                     />
                 </div>
             );
@@ -87,6 +85,7 @@ const CreateShift = () => {
                         <Dropdown
                             types={types}
                             onChange={handleDropdownChange}
+                            required
                         />
                     </div>
                     <div className="item">
@@ -95,13 +94,17 @@ const CreateShift = () => {
                             name="date"
                             value={shiftData.date}
                             onChange={handleChange}
+                            required
                         />
                     </div>
                     <div className="item">
                         <input
                             type="text"
+                            name="reason"
                             onChange={handleChange}
                             placeholder="Razon:"
+                            required
+                            autoComplete="off"
                         />
                     </div>
                     {renderDynamicInputs()}

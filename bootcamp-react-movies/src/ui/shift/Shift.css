@@ -37,15 +37,17 @@
 	  & button{
         background-color: transparent;
 		padding: 0 1rem;
-		border: 2px solid #8eb8c5;
-        color: #242424;
-        font-weight: bold;
+		border: 2px solid #7ea1ac;
+        color: #7ea1ac;
+        font-weight: bol;
+        font-size: .9rem;
 		border-radius: .5rem;
 		cursor: pointer;
         transition: all .3s;
 	  }
       & button:hover{
-        background-color: #8eb8c5;
+        background-color: #7ea1ac;
+        color: #242424;
       }
     }
 
