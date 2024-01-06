@@ -13,9 +13,6 @@ const AppRouter = () => {
                         <Route
                             path={routes.publicas.INDEX}
                         />
-                        <Route
-                            path={routes.publicas.SHIFT}
-                        />
                     </Routes>
                 </BrowserRouter>
             </Suspense>

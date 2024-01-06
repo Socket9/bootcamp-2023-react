@@ -7,9 +7,6 @@ const NavBar = () => {
             <NavLink to={"/"} className="nav-link">
                 Home
             </NavLink>
-            <NavLink to={"/shift"} className="nav-link">
-                Shifts
-            </NavLink>
         </div>
     );
 };
