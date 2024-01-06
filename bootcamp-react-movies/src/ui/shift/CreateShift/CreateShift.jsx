@@ -38,7 +38,8 @@ const CreateShift = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const shiftWithId = { ...shiftData, id: shifts.length };
+        const shiftWithId = { ...shiftData, id: shifts.length + 1  };
+        console.log(shiftWithId);
         dispatch(addShift(shiftWithId));
     };
 

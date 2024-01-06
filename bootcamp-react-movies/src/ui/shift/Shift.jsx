@@ -10,8 +10,10 @@ const Shift = ({ shift }) => {
         dispatch(setSelectedShiftId(shift.id));
     };
 
+    const shiftItemClassName = `shift-item ${shift.finished ? 'attended' : ''}`;
+
     return (
-        <div className="shift-item">
+        <div className={shiftItemClassName}>
             <div className="content">
                 <div className="item">
                     <p>ID</p>
